@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import react,{useState} from 'react';
+
 
 function App() {
+ const[minutes,setMinutes]=useState('00')
+ const [seconds,setSeconds]=useState('00')
+
+
+const starttimer=()=>{
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <input type="number" value={minutes} onChange={(e)=>{setMinutes(e.target.value)}}/>&nbsp;
+      <input type="number"  value={seconds} onChange={(e)=>{setSeconds(e.target.value)}}/> &nbsp;
+      <button onClick={starttimer}>Start</button> &nbsp;
+      <button>Resume</button>&nbsp;
+      <button>Reset</button> &nbsp;
+
+      <div>{minutes}:{seconds}</div>
+     
+    </>
   );
 }
 
